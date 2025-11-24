@@ -1,0 +1,39 @@
+/* Genel font ayarı: Türkçe karakter uyumlu fontlar */
+body {
+  font-family: "Segoe UI", "Helvetica Neue", "Arial", "Verdana", sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+/* Responsive tasarım ayarı (Şu an içerik yok ama hazır bırakıldı) */
+@media only screen and (max-width: 1200px) {
+  /* Buraya küçük ekranlar için ek stil tanımlayabilirsiniz */
+}
+
+/* Video kapsayıcı: 16:9 oran koruma */
+.video-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+/* Responsive iframe stili */
+.video-frame {
+  width: 100%;
+  max-width: 640px;
+  height: 360px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* Lejant kutusu görünürlüğü netleştirildi */
+.leaflet-control .legend {
+  font-size: 10px !important;
+  line-height: 1.1 !important;
+}
+
+
+

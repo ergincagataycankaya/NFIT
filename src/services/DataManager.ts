@@ -1,5 +1,5 @@
 import Papa from 'papaparse'
-import { TreeData, PlotData, OluData, DiriData, ToprakData, SuData, KarbonData } from '../types/DataTypes'
+import type { TreeData, PlotData, OluData, DiriData, ToprakData, SuData, KarbonData } from '../types/DataTypes'
 
 class DataManager {
     private static instance: DataManager
