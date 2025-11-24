@@ -3,14 +3,12 @@ import { useLanguage } from '../../contexts/LanguageContext'
 import { BaseMap } from '../maps/BaseMap'
 import { PlotMarkers } from '../maps/PlotMarkers'
 import { useData } from '../../hooks/useData'
-import { PlotData } from '../../types/DataTypes'
 
 interface SpatialViewProps {
-    dataKey: 'plotData' | 'treeData'
     title: string
 }
 
-export const SpatialView = ({ dataKey, title }: SpatialViewProps) => {
+export const SpatialView = ({ title }: SpatialViewProps) => {
     const { t } = useLanguage()
     const data = useData()
     const [selectedSample, setSelectedSample] = useState<number | undefined>()

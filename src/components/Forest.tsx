@@ -1,7 +1,6 @@
 import { useRef, useMemo, useEffect } from 'react'
 import { useData } from '../hooks/useData'
 import * as THREE from 'three'
-import { useFrame } from '@react-three/fiber'
 
 export const Forest = () => {
     const { treeData } = useData()
