@@ -1,0 +1,23 @@
+[36mvite v7.2.4 [32mbuilding client environment for production...[36m[39m
+transforming...
+src/services/DataManager.ts (2:9): "TreeData" is not exported by "src/types/DataTypes.ts", imported by "src/services/DataManager.ts".
+src/services/DataManager.ts (2:19): "PlotData" is not exported by "src/types/DataTypes.ts", imported by "src/services/DataManager.ts".
+src/services/DataManager.ts (2:29): "OluData" is not exported by "src/types/DataTypes.ts", imported by "src/services/DataManager.ts".
+src/services/DataManager.ts (2:38): "DiriData" is not exported by "src/types/DataTypes.ts", imported by "src/services/DataManager.ts".
+src/services/DataManager.ts (2:48): "ToprakData" is not exported by "src/types/DataTypes.ts", imported by "src/services/DataManager.ts".
+src/services/DataManager.ts (2:60): "SuData" is not exported by "src/types/DataTypes.ts", imported by "src/services/DataManager.ts".
+src/services/DataManager.ts (2:68): "KarbonData" is not exported by "src/types/DataTypes.ts", imported by "src/services/DataManager.ts".
+src/hooks/useData.ts (3:9): "TreeData" is not exported by "src/types/DataTypes.ts", imported by "src/hooks/useData.ts".
+src/hooks/useData.ts (3:19): "PlotData" is not exported by "src/types/DataTypes.ts", imported by "src/hooks/useData.ts".
+[32mΓ£ô[39m 1290 modules transformed.
+rendering chunks...
+computing gzip size...
+[2mdist/[22m[32mindex.html                 [39m[1m[2m    0.46 kB[22m[1m[22m[2m Γöé gzip:   0.29 kB[22m
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+[2mdist/[22m[35massets/index-BwPzjw1d.css  [39m[1m[2m   16.44 kB[22m[1m[22m[2m Γöé gzip:   6.78 kB[22m
+[2mdist/[22m[36massets/index-C_VXHhfH.js   [39m[1m[33m1,816.52 kB[39m[22m[2m Γöé gzip: 539.39 kB[22m
+[32mΓ£ô built in 20.48s[39m
