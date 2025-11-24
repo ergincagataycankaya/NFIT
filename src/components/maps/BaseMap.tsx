@@ -1,41 +1,19 @@
-import { MapContainer, TileLayer, LayersControl, ScaleControl, useMap } from 'react-leaflet'
-import { useEffect } from 'react'
-import L from 'leaflet'
+import { MapContainer, TileLayer, LayersControl, ScaleControl } from 'react-leaflet'
+import { BoundaryLayers } from './BoundaryLayers'
+import type { ReactNode } from 'react'
 import 'leaflet/dist/leaflet.css'
 
-const { BaseLayer } = LayersControl
+const { BaseLayer, Overlay } = LayersControl
 
 interface BaseMapProps {
     center: [number, number]
     zoom: number
-    children?: React.ReactNode
+    children?: ReactNode
     style?: React.CSSProperties
+    showBoundaries?: boolean
 }
 
-// Component to add measure control
-function MeasureControl() {
-    const map = useMap()
-
-    useEffect(() => {
-        // Add measurement tools (simplified - would need leaflet-draw or similar plugin)
-        // For now, just adding a minimap
-        if ((L.Control as any).MiniMap) {
-            const miniMap = new (L.Control as any).MiniMap(
-                L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'),
-                {
-                    toggleDisplay: true,
-                    minimized: false,
-                    position: 'bottomleft'
-                }
-            )
-            map.addControl(miniMap)
-        }
-    }, [map])
-
-    return null
-}
-
-export const BaseMap = ({ center, zoom, children, style }: BaseMapProps) => {
+export const BaseMap = ({ center, zoom, children, style, showBoundaries = true }: BaseMapProps) => {
     return (
         <MapContainer
             center={center}
@@ -56,10 +34,28 @@ export const BaseMap = ({ center, zoom, children, style }: BaseMapProps) => {
                         url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
                     />
                 </BaseLayer>
+
+                {showBoundaries && (
+                    <>
+                        <Overlay name="OİM SINIRLARI">
+                            <BoundaryLayers showOIM={true} />
+                        </Overlay>
+
+                        <Overlay name="OİŞ SINIRLARI">
+                            <BoundaryLayers showSeflik={true} />
+                        </Overlay>
+
+                        <Overlay name="İKLİM TİPLERİ">
+                            <BoundaryLayers showEcoregions={true} />
+                        </Overlay>
+                    </>
+                )}
             </LayersControl>
 
             <ScaleControl position="bottomleft" />
-            <MeasureControl />
+
+            {/* Main OBM boundary always shown */}
+            {showBoundaries && <BoundaryLayers showOBM={true} />}
 
             {children}
         </MapContainer>
